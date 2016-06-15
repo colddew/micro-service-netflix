@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>edu.ustc</groupId>
+	<artifactId>micro-service-netflix</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+		</dependencies>
+	</dependencyManagement>
+		
+	<build>
+		<finalName>micro-service-netflix</finalName>
+	</build>
+	<modules>
+		<module>micro-service-netflix-gateway</module>
+		<module>micro-service-netflix-server</module>
+		<module>micro-service-netflix-server2</module>
+	</modules>
+</project>
