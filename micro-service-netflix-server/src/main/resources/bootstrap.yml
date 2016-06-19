@@ -2,7 +2,7 @@ spring:
   application:
     name: micro-service-netflix-server
   profiles:
-    active: dev,test,prd
+    active: dev,test,prod
   cloud:
     config:
       uri: ${SPRING_CONFIG_URI:http://localhost:8888}

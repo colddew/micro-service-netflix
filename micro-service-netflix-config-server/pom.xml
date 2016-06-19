@@ -9,25 +9,16 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>micro-service-netflix-server</artifactId>
+	<artifactId>micro-service-netflix-config-server</artifactId>
 	
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 	</dependencies>
 	
 	<build>
-		<finalName>micro-service-netflix-server</finalName>
+		<finalName>micro-service-netflix-config-server</finalName>
 	</build>
 </project>
