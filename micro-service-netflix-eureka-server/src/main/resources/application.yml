@@ -1,0 +1,33 @@
+spring:
+  profiles: peer1
+  application:
+    name: micro-service-netflix-eureka-server
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: peer1
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
+
+---
+
+spring:
+  profiles: peer2
+  application:
+    name: micro-service-netflix-eureka-server
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: peer2
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/

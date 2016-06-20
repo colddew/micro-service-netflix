@@ -23,7 +23,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-		
+	
 	<build>
 		<finalName>micro-service-netflix</finalName>
 		<pluginManagement>
@@ -47,5 +47,6 @@
 		<module>micro-service-netflix-server</module>
 		<module>micro-service-netflix-server2</module>
 		<module>micro-service-netflix-config-server</module>
+		<module>micro-service-netflix-eureka-server</module>
 	</modules>
 </project>
