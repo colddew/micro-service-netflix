@@ -5,9 +5,13 @@ spring:
     active: dev,test,prod
   cloud:
     config:
-      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
-#      uri: ${SPRING_CONFIG_URI:<config server domain name>}
-#      uri: ${SPRING_CONFIG_URI:http://config-repo.com}
+#      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
+      uri: ${SPRING_CONFIG_URI:http://config-repo.com}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
 
 ---
 

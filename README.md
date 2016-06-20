@@ -18,7 +18,7 @@ build
 
 	execute `mvn spring-boot:run -Dspring.profiles.active=peer1` and `mvn spring-boot:run -Dspring.profiles.active=peer2` to start eureka server cluster
 
-- [ ] Hystrix
+- [ ] Hystrix (circuit breaker)
 
 - [ ] Turbine
 
@@ -28,11 +28,11 @@ build
 
 - [ ] Archaius
 
-- [ ] Zuul
+- [ ] Zuul (intelligent routing)
 
 - [ ] Metrics
 
-- [ ] RxJava (reactive programming library)
+- [ ] RxJava (reactive programming)
 
 - [x] update version
 
