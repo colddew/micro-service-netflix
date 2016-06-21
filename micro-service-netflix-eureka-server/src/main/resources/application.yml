@@ -8,8 +8,6 @@ eureka:
   instance:
     hostname: peer1
     preferIpAddress: true
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
@@ -26,8 +24,6 @@ eureka:
   instance:
     hostname: peer2
     preferIpAddress: true
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/

@@ -17,6 +17,10 @@ build
 - [ ] Eureka (service registration and discovery)
 
 	execute `mvn spring-boot:run -Dspring.profiles.active=peer1` and `mvn spring-boot:run -Dspring.profiles.active=peer2` to start eureka server cluster
+	
+	execute `mvn spring-boot:run -Dserver.port=8080` and `mvn spring-boot:run -Dserver.port=8081` to register service
+	
+	execute `mvn spring-boot:run -Dserver.port=8100` to start gateway, then invoke service registered in eureka server cluster
 
 - [ ] Hystrix (circuit breaker)
 
