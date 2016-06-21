@@ -17,7 +17,7 @@ public class GatewayController {
 	@RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
 	public String home() {
 		
-		gatewayService.invokeByNativeEurekaClient();
+		gatewayService.invokeRemoteServiceByNativeEurekaClient();
 		
         return "hello world gateway !";
     }

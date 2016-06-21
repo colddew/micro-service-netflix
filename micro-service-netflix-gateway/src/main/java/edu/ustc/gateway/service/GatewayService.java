@@ -16,10 +16,12 @@ public class GatewayService {
 	@Autowired
 	private EurekaClient discoveryClient;
 	
-	public void invokeByNativeEurekaClient() {
+	public void invokeRemoteServiceByNativeEurekaClient() {
 		
 		InstanceInfo instance = discoveryClient.getNextServerFromEureka("micro-service-netflix-server", false);
+		logger.info("invoke remote service micro-service-netflix-server by native eureka client, ##### {} #####", instance.getHomePageUrl());
 		
-		logger.info("##### {} #####", instance.getHomePageUrl());
+		InstanceInfo instance2 = discoveryClient.getNextServerFromEureka("micro-service-netflix-server2", false);
+		logger.info("invoke remote service micro-service-netflix-server2 by native eureka client, ##### {} #####", instance2.getHomePageUrl());
 	}
 }

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: micro-service-netflix-server2
+  profiles:
+    active: dev,test,prod
+  cloud:
+    config:
+#      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
+      uri: ${SPRING_CONFIG_URI:http://config-repo.com}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+---
+
+concurrent:
+  quantity: 15

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/server")
 @RefreshScope
-public class NetflixController {
+public class MicroServiceController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(NetflixController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MicroServiceController.class);
 	
 	@Value("${concurrent.quantity}")
 	private String concurrentQuantity;
@@ -23,6 +23,6 @@ public class NetflixController {
 		
 		logger.info("concurrentQuantity is {}", concurrentQuantity);
 		
-        return "hello world netflix !";
+        return "hello world server !";
     }
 }

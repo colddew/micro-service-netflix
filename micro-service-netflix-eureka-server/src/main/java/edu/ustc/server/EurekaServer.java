@@ -8,13 +8,13 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @EnableEurekaServer
-public class MicroServiceServer {
+public class EurekaServer {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MicroServiceServer.class);
+	private static final Logger logger = LoggerFactory.getLogger(EurekaServer.class);
 	
 	public static void main(String[] args) throws Exception {
     	
-		new SpringApplicationBuilder(MicroServiceServer.class).web(true).run(args);
+		new SpringApplicationBuilder(EurekaServer.class).web(true).run(args);
     	
         logger.info("micro-service-netflix-eureka-server is running...");
     }
