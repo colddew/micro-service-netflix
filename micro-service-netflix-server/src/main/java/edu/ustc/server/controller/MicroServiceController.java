@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+
 @RestController
 @RequestMapping("/api/v1/server")
 @RefreshScope
@@ -23,6 +26,22 @@ public class MicroServiceController {
 		
 		logger.info("concurrentQuantity is {}", concurrentQuantity);
 		
-        return "hello world server !";
+        return "hello server !";
     }
+	
+	@RequestMapping(value = {"/hystrixMethod"}, method = RequestMethod.GET)
+	@HystrixCommand(fallbackMethod = "defaultHystrixMethod", 
+		groupKey = "micro-service-netflix-server.MicroServiceGroup", 
+		commandKey = "micro-service-netflix-server.MicroServiceController.hystrixMethod", 
+		threadPoolKey = "micro-service-netflix-server.MicroServiceThreadPool", 
+		commandProperties = {
+		@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000") 
+	})
+	public String hystrixMethod() {
+		return "hystrix method";
+	}
+	
+	public String defaultHystrixMethod() {
+		return "defalut hystrix method";
+	}
 }

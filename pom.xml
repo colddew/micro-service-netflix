@@ -10,6 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>Brixton.SR1</spring-cloud.version>
+		<hystrix.javanica.version>1.5.3</hystrix.javanica.version>
 	</properties>
 	
 	<dependencyManagement>
@@ -20,6 +21,12 @@
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.netflix.hystrix</groupId>
+				<artifactId>hystrix-javanica</artifactId>
+				<version>${hystrix.javanica.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -48,5 +55,7 @@
 		<module>micro-service-netflix-server2</module>
 		<module>micro-service-netflix-config-server</module>
 		<module>micro-service-netflix-eureka-server</module>
+		<module>micro-service-netflix-hystrix-dashboard</module>
+		<module>micro-service-netflix-turbine</module>
 	</modules>
 </project>

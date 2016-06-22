@@ -1,4 +1,4 @@
-package edu.ustc.server;
+package edu.ustc.eureka;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

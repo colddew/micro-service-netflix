@@ -14,23 +14,27 @@ build
 	
     define the non-static bean with @RefreshScope annotation, execute `curl -X POST http://localhost:8080/refresh` to refresh the attribute value
 
-- [ ] Eureka (service registration and discovery)
+- [x] Eureka (service registration and discovery)
 
 	execute `mvn spring-boot:run -Dspring.profiles.active=peer1` and `mvn spring-boot:run -Dspring.profiles.active=peer2` to start eureka server cluster
 	
-	execute `mvn spring-boot:run -Dserver.port=8080` and `mvn spring-boot:run -Dserver.port=8081` to register service
+	execute `mvn spring-boot:run -Dserver.port=8080`, `mvn spring-boot:run -Dserver.port=8081`, `mvn spring-boot:run -Dserver.port=8082`, `mvn spring-boot:run -Dserver.port=8083` to register multiple services
 	
 	execute `mvn spring-boot:run -Dserver.port=8100` to start gateway, then invoke service registered in eureka server cluster
 
-- [ ] Hystrix (circuit breaker)
+- [x] Hystrix (circuit breaker)
 
-- [ ] Turbine
+	execute `mvn spring-boot:run -Dserver.port=8200` to start hystrix dashboard
+
+- [x] Turbine (gather hystrix metrics stream)
+
+	execute `mvn spring-boot:run -Dserver.port=8300` to start turbine
 
 - [ ] Ribbon (client side load balancing)
 
 - [ ] Feign (easy rest client)
 
-- [ ] Archaius
+- [ ] Archaius (dynamic configuration)
 
 - [ ] Zuul (intelligent routing)
 
