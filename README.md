@@ -22,9 +22,11 @@ build
 	
 	execute `mvn spring-boot:run -Dserver.port=8100` to start gateway, then invoke service registered in eureka server cluster
 
-- [x] Hystrix (circuit breaker)
+- [x] Hystrix (circuit breaker) and Hystrix Dashboard (monitor stream)
 
 	execute `mvn spring-boot:run -Dserver.port=8200` to start hystrix dashboard
+	
+	input `http://127.0.0.1:8300/turbine.stream` on hystrix dashboard home page, monitor micro service running state
 
 - [x] Turbine (gather hystrix metrics stream)
 
