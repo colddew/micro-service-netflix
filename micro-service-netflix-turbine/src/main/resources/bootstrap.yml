@@ -10,7 +10,9 @@ eureka:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 turbine:
+#  aggregator:
+#    clusterConfig: MICRO-SERVICE-NETFLIX-SERVER,MICRO-SERVICE-NETFLIX-SERVER2,MICRO-SERVICE-NETFLIX-GATEWAY
   instanceUrlSuffix: /hystrix.stream
-  combineHostPort: true   # Necessary if you run two or more services in a single host
+  combineHostPort: true   # necessary if you run two or more services in a single host
   appConfig: micro-service-netflix-server,micro-service-netflix-server2,micro-service-netflix-gateway
   clusterNameExpression: new String("default")
