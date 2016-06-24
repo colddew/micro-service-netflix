@@ -25,7 +25,7 @@ public class MicroServiceController {
 	@RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
 	public String home() {
 		
-		logger.info("original concurrentQuantity is {}", concurrentQuantity);
+		logger.info("concurrentQuantity is {}", concurrentQuantity);
 		
 		logger.info("dynamic concurrentQuantity is {}", DynamicPropertyFactory.getInstance().getStringProperty("concurrent.quantity", "0").getValue());
 		
