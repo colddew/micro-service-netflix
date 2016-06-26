@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
@@ -25,6 +26,8 @@ public class MicroServiceController {
 	public String home() {
 		
 		logger.info("concurrentQuantity is {}", concurrentQuantity);
+		
+		logger.info("dynamic concurrentQuantity is {}", DynamicPropertyFactory.getInstance().getStringProperty("concurrent.quantity", "0").getValue());
 		
         return "hello server2 !";
     }

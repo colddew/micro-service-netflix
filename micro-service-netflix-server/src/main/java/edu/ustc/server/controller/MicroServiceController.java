@@ -1,9 +1,12 @@
 package edu.ustc.server.controller;
 
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+//import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,15 +15,22 @@ import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
+import edu.ustc.server.utils.OkHttpUtils;
+
 @RestController
 @RequestMapping("/api/v1/server")
-@RefreshScope
+//@RefreshScope
 public class MicroServiceController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MicroServiceController.class);
 	
 	@Value("${concurrent.quantity}")
 	private String concurrentQuantity;
+	
+	@Scheduled(cron = "0/10 * * * * ?")
+	public void refresh() throws Exception {
+		OkHttpUtils.synPostForm("http://localhost:8080/refresh", new HashMap<>());
+	}
 	
 	@RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
 	public String home() {

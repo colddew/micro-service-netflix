@@ -11,6 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>Brixton.SR1</spring-cloud.version>
 		<hystrix.javanica.version>1.5.3</hystrix.javanica.version>
+		<okhttp.version>2.7.5</okhttp.version>
 	</properties>
 	
 	<dependencyManagement>
@@ -27,6 +28,12 @@
 				<groupId>com.netflix.hystrix</groupId>
 				<artifactId>hystrix-javanica</artifactId>
 				<version>${hystrix.javanica.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.squareup.okhttp</groupId>
+				<artifactId>okhttp</artifactId>
+				<version>${okhttp.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
