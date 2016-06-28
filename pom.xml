@@ -9,9 +9,11 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
 		<spring-cloud.version>Brixton.SR1</spring-cloud.version>
 		<hystrix.javanica.version>1.5.3</hystrix.javanica.version>
 		<okhttp.version>2.7.5</okhttp.version>
+		<fastjson.version>1.2.7</fastjson.version>
 	</properties>
 	
 	<dependencyManagement>
@@ -34,6 +36,12 @@
 				<groupId>com.squareup.okhttp</groupId>
 				<artifactId>okhttp</artifactId>
 				<version>${okhttp.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
