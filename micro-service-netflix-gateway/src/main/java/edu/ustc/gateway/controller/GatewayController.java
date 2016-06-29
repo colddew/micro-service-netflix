@@ -22,8 +22,13 @@ public class GatewayController {
         return "hello world gateway !";
     }
 	
-	@RequestMapping(value = {"/hystrixMethod"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/hystrix"}, method = RequestMethod.GET)
 	public String hystrix() {
 		return gatewayService.invokeRemoteHystrixService();
     }
+	
+	@RequestMapping(value = {"/ribbon"}, method = RequestMethod.GET)
+	public String ribbon() {
+		return gatewayService.invokeRemoteServiceByRibbon();
+	}
 }

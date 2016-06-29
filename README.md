@@ -32,11 +32,11 @@ build
 
 	execute `mvn spring-boot:run -Dserver.port=8300` to start turbine
 
-- [ ] Ribbon (client side load balancing)
+- [x] Ribbon (client side load balancing)
 
 - [ ] Feign (easy rest client)
 
-- [ ] Archaius (dynamic configuration)
+- [x] Archaius (dynamic configuration)
 
 - [ ] Zuul (intelligent routing)
 
