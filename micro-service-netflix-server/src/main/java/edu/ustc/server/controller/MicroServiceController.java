@@ -1,5 +1,6 @@
 package edu.ustc.server.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
+import edu.ustc.common.dto.NetflixMicroService;
 import edu.ustc.server.utils.OkHttpUtils;
 
 @RestController
@@ -41,7 +43,7 @@ public class MicroServiceController {
         return "hello server !";
     }
 	
-	@RequestMapping(value = {"/hystrixMethod"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/hystrixMethod", method = RequestMethod.GET)
 	@HystrixCommand(fallbackMethod = "defaultHystrixMethod", 
 		groupKey = "micro-service-netflix-server.MicroServiceGroup", 
 		commandKey = "micro-service-netflix-server.MicroServiceController.hystrixMethod", 
@@ -55,5 +57,10 @@ public class MicroServiceController {
 	
 	public String defaultHystrixMethod() {
 		return "defalut hystrix method";
+	}
+	
+	@RequestMapping(value = "/netflixMicroService", method = RequestMethod.GET)
+	public NetflixMicroService netflixMicroService() {
+		return new NetflixMicroService(1, "micro-service-netflix-server", "up", new Date());
 	}
 }

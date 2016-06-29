@@ -1,5 +1,7 @@
 package edu.ustc.server.controller;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+
+import edu.ustc.common.dto.NetflixMicroService;
 
 @RestController
 @RequestMapping("/api/v1/server2")
@@ -32,7 +36,7 @@ public class MicroServiceController {
         return "hello server2 !";
     }
 	
-	@RequestMapping(value = {"/hystrixMethod2"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/hystrixMethod2", method = RequestMethod.GET)
 	@HystrixCommand(fallbackMethod = "defaultHystrixMethod", 
 		groupKey = "micro-service-netflix-server2.MicroServiceGroup", 
 		commandKey = "micro-service-netflix-server2.MicroServiceController.hystrixMethod", 
@@ -47,5 +51,10 @@ public class MicroServiceController {
 	
 	public String defaultHystrixMethod() {
 		return "defalut hystrix method2";
+	}
+	
+	@RequestMapping(value = "/netflixMicroService2", method = RequestMethod.GET)
+	public NetflixMicroService netflixMicroService2() {
+		return new NetflixMicroService(1, "micro-service-netflix-server2", "down", new Date());
 	}
 }

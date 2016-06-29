@@ -1,8 +1,12 @@
 package edu.ustc.gateway.service;
 
+import java.net.URI;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.stereotype.Service;
 
 import com.netflix.appinfo.InstanceInfo;
@@ -17,6 +21,9 @@ public class GatewayService {
 	
 	@Autowired
 	private EurekaClient discoveryClient;
+	
+	@Autowired
+	private LoadBalancerClient loadBalancer;
 	
 	public void invokeRemoteServiceByNativeEurekaClient() {
 		
@@ -47,5 +54,13 @@ public class GatewayService {
 	
 	public String defaultInvokeRemoteHystrixService() {
 		return "defalut invokeRemoteHystrixService";
+	}
+	
+	public String invokeRemoteServiceByRibbon() {
+		
+		ServiceInstance instance = loadBalancer.choose("micro-service-netflix-server");
+		URI storesUri = URI.create(String.format("http://%s:%s", instance.getHost(), instance.getPort()));
+		
+		return storesUri.toString();
 	}
 }
