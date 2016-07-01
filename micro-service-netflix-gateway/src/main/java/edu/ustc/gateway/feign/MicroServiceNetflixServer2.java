@@ -10,7 +10,7 @@ import edu.ustc.common.dto.NetflixMicroService;
 @RequestMapping("/api/v1/server2")
 public interface MicroServiceNetflixServer2 {
 	
-	@RequestMapping(value = "/hystrixMethod", method = RequestMethod.GET)
+	@RequestMapping(value = "/hystrixMethod2", method = RequestMethod.GET)
 	String hystrixMethod();
 	
 	@RequestMapping(value = "/netflixMicroService2", method = RequestMethod.GET, consumes = "application/json")

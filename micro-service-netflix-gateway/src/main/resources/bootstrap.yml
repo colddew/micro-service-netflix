@@ -16,3 +16,7 @@ eureka:
       enabled: true
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+feign:
+  hystrix:
+    enabled: false
