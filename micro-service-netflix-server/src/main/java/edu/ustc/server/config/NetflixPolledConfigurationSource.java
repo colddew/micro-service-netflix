@@ -12,6 +12,9 @@ import com.netflix.config.PolledConfigurationSource;
 import edu.ustc.server.utils.OkHttpUtils;
 import edu.ustc.server.utils.YamlUtils;
 
+/**
+ * when replacing spring.cloud.config.url with spring.cloud.config.discovery, it is invalid
+ */
 public class NetflixPolledConfigurationSource implements PolledConfigurationSource {
 	
 	@Override

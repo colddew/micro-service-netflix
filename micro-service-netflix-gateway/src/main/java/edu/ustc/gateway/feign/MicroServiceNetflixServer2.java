@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.ustc.common.dto.NetflixMicroService;
 
-@FeignClient(name = "micro-service-netflix-server2"/*, fallback = MicroServiceNetflixServer2Fallback.class*/)
+@FeignClient(name = "micro-service-netflix-server2")
 @RequestMapping("/api/v1/server2")
 public interface MicroServiceNetflixServer2 {
 	

@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.ustc.common.dto.NetflixMicroService;
 
-//TODO update framwork to fix fallback bug
-//TODO customize group and thread pool for hystrix
-@FeignClient(name = "micro-service-netflix-server"/*, fallback = MicroServiceNetflixServerFallback.class*/)
+@FeignClient(name = "micro-service-netflix-server")
 @RequestMapping("/api/v1/server")
 public interface MicroServiceNetflixServer {
 	

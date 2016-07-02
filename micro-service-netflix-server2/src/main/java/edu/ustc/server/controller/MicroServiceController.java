@@ -54,7 +54,18 @@ public class MicroServiceController {
 	}
 	
 	@RequestMapping(value = "/netflixMicroService2", method = RequestMethod.GET)
+	@HystrixCommand(fallbackMethod = "defaultNetflixMicroService2", 
+		groupKey = "micro-service-netflix-server2.MicroServiceGroup", 
+		commandKey = "micro-service-netflix-server2.MicroServiceController.netflixMicroService2", 
+		threadPoolKey = "micro-service-netflix-server2.MicroServiceThreadPool",
+		commandProperties = {
+		@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000") 
+	})
 	public NetflixMicroService netflixMicroService2() {
 		return new NetflixMicroService(1, "micro-service-netflix-server2", "down", new Date());
+	}
+	
+	public NetflixMicroService defaultNetflixMicroService2() {
+		return null;
 	}
 }

@@ -40,7 +40,7 @@ build
 
 - [ ] Zuul (intelligent routing)
 
-- [ ] Metrics
+- [ ] Metrics (Spectator/Servo, metrics collection; Atlas, metrics management backend of dimensional time series data)
 
 - [ ] RxJava (reactive programming)
 

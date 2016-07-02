@@ -6,7 +6,16 @@ spring:
   cloud:
     config:
 #      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
-      uri: ${SPRING_CONFIG_URI:http://config-repo.com}
+#      uri: ${SPRING_CONFIG_URI:http://config-repo.com}
+      discovery:
+        serviceId: micro-service-netflix-config-server
+        enabled: true
+      failFast: true
+      retry:
+        initialInterval: 2000
+        multiplier: 2.0
+        maxInterval: 30000
+        maxAttempts: 10
 
 eureka:
   client:

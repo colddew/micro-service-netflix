@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: micro-service-netflix-config-server
   profiles: configserver1
   config:
     name: configserver
@@ -14,6 +16,8 @@ server:
 ---
 
 spring:
+  application:
+    name: micro-service-netflix-config-server
   profiles: configserver2
   config:
     name: configserver
