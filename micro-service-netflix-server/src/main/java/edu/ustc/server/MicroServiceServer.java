@@ -6,10 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.metrics.atlas.EnableAtlas;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCircuitBreaker
+@EnableAtlas
+@EnableScheduling
 public class MicroServiceServer {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MicroServiceServer.class);

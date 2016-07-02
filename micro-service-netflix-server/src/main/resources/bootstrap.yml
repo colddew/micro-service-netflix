@@ -25,3 +25,7 @@ eureka:
       enabled: true
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+netflix:
+  atlas:
+    uri: http://127.0.0.1:7101/api/v1/publish/
