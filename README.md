@@ -40,7 +40,7 @@ build
 
 - [ ] Zuul (intelligent routing)
 
-- [ ] Metrics (Spectator/Servo, metrics collection; Atlas, metrics management backend of dimensional time series data)
+- [x] Metrics (Spectator/Servo, metrics collection; Atlas, metrics management backend of dimensional time series data)
 
 	download atlas jar, and execute `java -jar atlas-1.4.6-standalone.jar  memory.conf` to start atlas server
 	execute `curl http://127.0.0.1:7101/api/v1/tags` in terminal, or enter `http://127.0.0.1:7101/api/v1/graph?q=name,rest,:eq,:avg` in browser to query metrics
@@ -57,9 +57,9 @@ build
 
 endpoint
 =======
-http://<server>://<port>/env
-http://<server>://<port>/health
-http://<server>://<port>/metrics
-http://<server>://<port>/info
-http://<server>://<port>/configprops
-http://<server>://<port>/trace
+`http://<ip>://<port>/env`  
+`http://<ip>://<port>/health`  
+`http://<ip>://<port>/metrics`  
+`http://<ip>://<port>/info`  
+`http://<ip>://<port>/configprops`  
+`http://<ip>://<port>/trace`
