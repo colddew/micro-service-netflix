@@ -45,8 +45,21 @@ build
 	download atlas jar, and execute `java -jar atlas-1.4.6-standalone.jar  memory.conf` to start atlas server
 	execute `curl http://127.0.0.1:7101/api/v1/tags` in terminal, or enter `http://127.0.0.1:7101/api/v1/graph?q=name,rest,:eq,:avg` in browser to query metrics
 
+- [x] Spring Cloud Bus
+
+	start rabbitmq, execute `./ngrok http 8887` to start ngrok, config webhook `http://<subdomain>.ngrok.io/monitor` on github
+
 - [ ] RxJava (reactive programming)
 
 - [x] update version
 
     mvn versions:set versions:commit -DnewVersion=`<version>`
+
+endpoint
+=======
+http://<server>://<port>/env
+http://<server>://<port>/health
+http://<server>://<port>/metrics
+http://<server>://<port>/info
+http://<server>://<port>/configprops
+http://<server>://<port>/trace
