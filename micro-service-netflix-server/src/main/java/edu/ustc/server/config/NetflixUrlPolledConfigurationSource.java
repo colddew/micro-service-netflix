@@ -13,9 +13,9 @@ import edu.ustc.server.utils.OkHttpUtils;
 import edu.ustc.server.utils.YamlUtils;
 
 /**
- * when replacing spring.cloud.config.url with spring.cloud.config.discovery, it is invalid
+ * config spring.cloud.config.url in bootstrap.yml
  */
-public class NetflixPolledConfigurationSource implements PolledConfigurationSource {
+public class NetflixUrlPolledConfigurationSource implements PolledConfigurationSource {
 	
 	@Override
 	public PollResult poll(boolean initial, Object checkPoint) throws Exception {

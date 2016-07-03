@@ -33,7 +33,8 @@ public class NetflixPropertySourceLocator implements PropertySourceLocator {
 			ConcurrentMapConfiguration configFromSystemProperties = new ConcurrentMapConfiguration(new SystemConfiguration());
 			
 			// configuration from a dynamic source
-			PolledConfigurationSource source = new NetflixPolledConfigurationSource();
+//			PolledConfigurationSource source = new NetflixUrlPolledConfigurationSource();
+			PolledConfigurationSource source = new NetflixEurekaPolledConfigurationSource();
 			AbstractPollingScheduler scheduler = new FixedDelayPollingScheduler();
 			DynamicConfiguration dynamicConfiguration = new DynamicConfiguration(source, scheduler);
 			
