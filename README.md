@@ -57,9 +57,9 @@ build
 
 endpoint
 =======
-`http://<ip>://<port>/env`  
-`http://<ip>://<port>/health`  
-`http://<ip>://<port>/metrics`  
-`http://<ip>://<port>/info`  
-`http://<ip>://<port>/configprops`  
-`http://<ip>://<port>/trace`
+`http://<ip>:<port>/env`  
+`http://<ip>:<port>/health`  
+`http://<ip>:<port>/metrics`  
+`http://<ip>:<port>/info`  
+`http://<ip>:<port>/configprops`  
+`http://<ip>:<port>/trace`
