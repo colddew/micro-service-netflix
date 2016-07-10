@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.ustc.gateway.feign.MicroServiceNetflixServer;
-import edu.ustc.gateway.feign.MicroServiceNetflixServer2;
 import edu.ustc.gateway.service.GatewayService;
+import edu.ustc.gateway.service.feign.MicroServiceNetflixServer;
+import edu.ustc.gateway.service.feign.MicroServiceNetflixServer2;
 
 @RestController
 @RequestMapping("/api/v1/gateway")
