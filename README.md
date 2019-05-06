@@ -1,12 +1,12 @@
-description
+Description
 =======
-micro service architected by netflix
+Micro Service architecture based on Spring Cloud Netflix
 
-tech stack
+Tech Stack
 =======
-spring cloud and netflix open source components
+Spring Cloud & Netflix open source components
 
-build
+Build
 =======
 - [x] spring cloud config
 	
@@ -55,11 +55,11 @@ build
 
     mvn versions:set versions:commit -DnewVersion=`<version>`
 
-endpoint
+Endpoint
 =======
-`http://<ip>:<port>/env`  
-`http://<ip>:<port>/health`  
-`http://<ip>:<port>/metrics`  
-`http://<ip>:<port>/info`  
-`http://<ip>:<port>/configprops`  
-`http://<ip>:<port>/trace`
+http://<ip>:<port>/`env`  
+http://<ip>:<port>/`health`  
+http://<ip>:<port>/`metrics`  
+http://<ip>:<port>/`info`  
+http://<ip>:<port>/`configprops`  
+http://<ip>:<port>/`trace`

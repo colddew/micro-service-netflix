@@ -12,7 +12,7 @@
 		<spring-cloud.version>Brixton.SR1</spring-cloud.version>
 		<hystrix.javanica.version>1.5.3</hystrix.javanica.version>
 		<okhttp.version>2.7.5</okhttp.version>
-		<fastjson.version>1.2.7</fastjson.version>
+		<fastjson.version>1.2.58</fastjson.version>
 	</properties>
 	
 	<dependencyManagement>
