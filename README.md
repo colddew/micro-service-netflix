@@ -49,8 +49,6 @@ Build
 
 	start rabbitmq, execute `./ngrok http 8887` to start ngrok, config webhook `http://<subdomain>.ngrok.io/monitor` on github
 
-- [ ] RxJava (reactive programming)
-
 - [x] update version
 
     mvn versions:set versions:commit -DnewVersion=`<version>`
